@@ -20,15 +20,17 @@ public class SelectionSort {
         	  System.out.print(a[i]+" ");
           }           
           
-          for(int i=0;i<size-1;i++){
-        	  for(int j=i+1;j<size;j++){
-        		  if(a[j]<a[i]){
-        			  int temp=a[i];
-        			  a[i]=a[j];
-        			  a[j]=temp;
-        		  }
-        	  }
-          }
+         for(int i=0;i<size-1;i++){
+        	 int min_index=i;
+        	 for(int j=i+1;j<size;j++){
+        		 if(a[j]<a[min_index]){
+        			 min_index=j;
+        		 }
+        	 }
+        	 int temp=a[i];
+        	 a[i]=a[min_index];
+        	 a[min_index]=temp;
+         }
           
           System.out.println("\nAfter sorting...");
           for(int i=0;i<size;i++){
